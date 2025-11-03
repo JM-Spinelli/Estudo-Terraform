@@ -18,6 +18,8 @@ pelo que vi, depois que import é feito, não precisa colar no main os recursos.
 
 
 caso você execute um terraform show e ele mostre existir recursos, mas que não existem mais, basta executar o comando ``terraform refresh``, que assim o terraform vai entender as alterações. 
+
+começar na aula 06 amanhã. 
 <b></b>- <br> 
 <b></b>- <br> 
 <b></b>- <br> 
