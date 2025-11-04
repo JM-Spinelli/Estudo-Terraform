@@ -27,6 +27,31 @@ ao criar uma vpc customizada ``aws_security_group```, é necessário definir os 
 
 
 <b>Terraform Show</b>- O Terraform Show mostra os recursos e todas as informações dele. é um comando muito útil quando não se lembra exatamente de todos os atributos do recurso. Para que se tenha um visão mais clean e objetiva dos recursos existentes, usar o comando ``terraform state list``.<br> 
+
+
+
+Arquivos Outputs: 
+Neles eu defino exatamente aquelas informações que quero ver de determinado recurso. 
+
+
+exemplo de conteúdo de um arquivo output.tf
+
+```
+output "instance_id"{
+description = "id da minha instância" #Descrição
+value = aws_intance.minha-ec2.id #aqui eu coloco o recurso, seu nome e o atributo desejado, no caso, id na instância
+}
+```
+
+seu deseja, ainda pra essa istância, trazer mais informações dela, eu cri outro boloco de output 
+
+```
+output "instance_type" {
+  description = "tipo da instância"
+  value = aws_instance.minha-ec2.instance_type
+}
+``` 
+
 <b></b>- <br> 
 <b></b>- <br> 
 <b></b>- <br> 
