@@ -46,7 +46,7 @@ value = aws_intance.minha-ec2.id #aqui eu coloco o recurso, seu nome e o atribut
 seu deseja, ainda pra essa istância, trazer mais informações dela, eu cri outro boloco de output 
 
 ```
-output "instance_type" {
+output "instance_type" { #Entre aspas está o nome e ele não pode ser repetido
   description = "tipo da instância"
   value = aws_instance.minha-ec2.instance_type
 }
