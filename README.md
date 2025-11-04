@@ -23,7 +23,10 @@ começar na aula 06 amanhã.
 
 
 ao criar uma vpc customizada ``aws_security_group```, é necessário definir os parâmetros ``ingress`` e ``egress``. Se definir um, mas não definir o outro, ele não será adicionado automaticamente (por default)
-<b></b>- <br> 
+
+
+
+<b>Terraform Show</b>- O Terraform Show mostra os recursos e todas as informações dele. é um comando muito útil quando não se lembra exatamente de todos os atributos do recurso. Para que se tenha um visão mais clean e objetiva dos recursos existentes, usar o comando ``terraform state list``.<br> 
 <b></b>- <br> 
 <b></b>- <br> 
 <b></b>- <br> 
