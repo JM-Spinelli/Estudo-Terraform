@@ -50,6 +50,26 @@ output "instance_type" { #Entre aspas está o nome e ele não pode ser repetido
   description = "tipo da instância"
   value = aws_instance.minha-ec2.instance_type
 }
+```
+
+Para uso de variáveis, usamos os comandos: 
+
+criar o arquivo ``variable.tf``  e o conteúdo do arquivo é: 
+
+```
+variabe "tipo_instancia" {
+  description = "Tipo da instância"
+  type = "string"
+  default = "t3.micro" #Valor que você quer passar
+
+```
+
+ao chamar esse valor no main, usamos: 
+
+ ```
+resource "aws_instance" "EC2" {
+    instance_type = var.tipo_instancia
+    ami = "ami-0bdd88bd06d16ba03"
 ``` 
 
 <b></b>- <br> 
