@@ -99,7 +99,46 @@ ao chamar esse valor no main, usamos:
 resource "aws_instance" "EC2" {
     instance_type = var.tipo_instancia
     ami = "ami-0bdd88bd06d16ba03"
-``` 
+```
+
+************************************************************************************************************************************
+
+O S3 é um forma segura de remota de guardar arquivos 
+
+
+para isso, criaremos e configuraremos um arquivo state. 
+
+arquivo: state_config.tf 
+
+e dentro dele, montamos da seguinte forma: 
+
+```
+terraform {
+backend "s3" { #Estou determinando que meu backend seja remoto
+  bucket = "nome meu bucket"
+  key = "pasta onde meu arquivo irá ficar"
+  region = "regiao que minha conta está"
+  profile = "meu usuário"
+}
+
+}
+```
+  Essas configurações foram feitas,mas caso ao der erro de beckend na hora de executar o comando ``terraform iinit``, é necessário migrar o stado de local para remoto ou vise e versa. 
+  para isso, usamos o comando: ``terraform init -migrate-state`` 
+
+  Mas veja, isso tudo aqui faz com que eu possa trabalhar com o meu tfstate remotamente. Ou seja, qualquer alteração que eu fizer, vai replicar no arquivo tfstate produtivo e utilizado por todos. O correto, é baixar uma cópia desse tfstate para sua máquina e trabalhar localmente com ele. Feito todos os testes e estando tudo ok, ai sobe a alteração no ambiente produtivo. 
+
+  para voltar o tf.state para a configuração original, alteramos o arquivo `state_config.tf`` para:
+
+  ```
+terraform {
+  backend "local" {
+  }
+
+}
+```
+e após isso, executar o comando: ``terraform init -migrate-state``assim ele muda o local e também baixa o arquivo 
+
 
 <b></b>- <br> 
 <b></b>- <br> 
