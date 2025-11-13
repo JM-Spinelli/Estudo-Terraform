@@ -1,6 +1,18 @@
 
 <b>Terraform Show</b>- Comando que mostra todas as configurações de um recurso<br> 
-<b>Terraform import</b>- O Terraform import, para usar, é necessário criar um arquivo com extensão .tf e nele declarar duas variávei ``id = "Id ou Name do resource"`` ``to = "resource.nome resource"``. Para efetivar o import, rodar o comando ``terraform plan -generate-config-out="nome-arquivo-saida".tf``<br> 
+<b>Terraform import</b>- 
+
+Tem duas formas de usar o terraform apply, sendo a a primeira: 
+``terrafom import 'resource.nome' 'id do resource'``
+
+exemplo: 
+```
+terraform apply aws_instance.EC2 i-039dfe5521b6c2303
+```
+Após isso, executar o comando ``terraform apply``. isso fará com que seja gerado um novo tf.state (Sim, nós usamos o import quando perdemos nossos arquivos de stado - tf.state e tf.state.backup)
+
+
+O Terraform import, para usar, é necessário criar um arquivo com extensão .tf e nele declarar duas variávei ``id = "Id ou Name do resource"`` ``to = "resource.nome resource"``. Para efetivar o import, rodar o comando ``terraform plan -generate-config-out="nome-arquivo-saida".tf``<br> 
 
 
 exemplo comando import 
