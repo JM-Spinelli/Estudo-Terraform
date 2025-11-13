@@ -31,7 +31,21 @@ pelo que vi, depois que import é feito, não precisa colar no main os recursos.
 
 caso você execute um terraform show e ele mostre existir recursos, mas que não existem mais, basta executar o comando ``terraform refresh``, que assim o terraform vai entender as alterações. 
 
-começar na aula 06 amanhã. 
+
+se importar recurso errado? removemos o recurso errado importado e importamos o recurso correto. 
+
+Comando para remover recurso errado: 
+``terraform state rm 'recurso.nome'``
+exemplo:
+```
+terraform state rm aws_security_goup.SG-Custom 
+```
+
+e em seguida importar novo recurso: 
+```
+terraform import aws_security_group.SG-custom sg-0268d6a0a7c8ebe9e
+``
+
 
 
 ao criar uma vpc customizada ``aws_security_group```, é necessário definir os parâmetros ``ingress`` e ``egress``. Se definir um, mas não definir o outro, ele não será adicionado automaticamente (por default)
