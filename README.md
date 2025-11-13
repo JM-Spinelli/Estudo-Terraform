@@ -36,15 +36,18 @@ se importar recurso errado? removemos o recurso errado importado e importamos o 
 
 Comando para remover recurso errado: 
 ``terraform state rm 'recurso.nome'``
+
 exemplo:
+
 ```
 terraform state rm aws_security_goup.SG-Custom 
 ```
 
 e em seguida importar novo recurso: 
+
 ```
 terraform import aws_security_group.SG-custom sg-0268d6a0a7c8ebe9e
-``
+``` 
 
 
 
