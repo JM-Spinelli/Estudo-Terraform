@@ -140,6 +140,10 @@ terraform {
 e após isso, executar o comando: ``terraform init -migrate-state``assim ele muda o local e também baixa o arquivo 
 
 
+Para que o SSM funcione, é necessário: 
+ 1 - que o user IAM e Role tenham mesmas policys (permissões, incluindo a de SSMIntenceCore)
+ 2 - Mesmo que a instância tenha IP publico, ainda sim é necessário ter umm Internet Gateway atrelado e funcionando
+
 <b></b>- <br> 
 <b></b>- <br> 
 <b></b>- <br> 
